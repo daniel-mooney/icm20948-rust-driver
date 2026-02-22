@@ -1,0 +1,25 @@
+[package]
+name = "stm32f4"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+icm20948 = { path = "../.." }
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+
+embedded-hal-bus="0.3.0"
+defmt = "1.0.1"
+panic-probe = "1.0.0"
+defmt-rtt = "1.1.0"
+
+[dependencies.stm32f4xx-hal]
+version = "0.23.0"
+features = ["stm32f411",]
+
+[profile.dev]
+opt-level = 0
+
+# # Set the default for dependencies.
+# [profile.dev.package."*"]
+# opt-level = "s"

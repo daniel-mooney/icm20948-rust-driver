@@ -1,0 +1,9 @@
+[build]
+target = "avr-none"
+rustflags = ["-C", "target-cpu=atmega328p"]
+
+[target.avr-none]
+runner = ["bash", "-lc", "avrdude -patmega328p -carduino -P/dev/ttyUSB0 -b115200 -D -Uflash:w:$1:e", "--"]
+
+[unstable]
+build-std = ["core"]
